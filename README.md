@@ -11,7 +11,7 @@ Car Rental in RageUI for FiveM.
 
 📷 Vidéo / Preview / Screen :
 
-    v0.1 : https://streamable.com/cnm42g
+v0.1 : https://streamable.com/cnm42g
 
 
     🔖Copyright (C) 2020 KoZeuh 
