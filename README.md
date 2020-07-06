@@ -29,7 +29,7 @@ Crédit RageUI : https://github.com/iTexZoz/RageUI
 
 📷 Vidéo / Preview :
 
-https://streamable.com/8wi9dy
+https://streamable.com/cnm42g
 
 
 ☁️ License
