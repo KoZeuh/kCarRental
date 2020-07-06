@@ -40,13 +40,13 @@ RMenu.Add('kLocation', 'main', RageUI.CreateMenu("Location", "~b~Location de vé
 
 Citizen.CreateThread(function()
     PosLocation = { 
-		{x = -990.24, y = -2707.30, z = 13.83},
-		{x = 1999.00, y = 3053.76, z = 47.05},
+	{x = -990.24, y = -2707.30, z = 13.83},
+	{x = 1999.00, y = 3053.76, z = 47.05},
         {x = -344.04, y = -875.49, z = 31.07}
 	}
     while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
+	TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+	Citizen.Wait(0)
     end
 	
   while true do
@@ -86,57 +86,57 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-        Citizen.Wait(0)
-        if ActiverBlip then
-          if not BlipActif then
-			for _, PosBlips in pairs(PosLocation) do
-				InfosBlips = AddBlipForCoord(PosBlips.x, PosBlips.y, PosBlips.z)
-      			SetBlipSprite(InfosBlips, 280)
-      			SetBlipDisplay(InfosBlips, 4)
-      			SetBlipScale(InfosBlips, 0.8)
-      			SetBlipColour(InfosBlips, 2)
-      			SetBlipAsShortRange(InfosBlips, true)
-	  			BeginTextCommandSetBlipName("STRING")
-      			AddTextComponentString("kLocation")
-                EndTextCommandSetBlipName(InfosBlips)
-                BlipActif = true         
-            end
-          else
-          end
-        end
+           Citizen.Wait(0)
+         if ActiverBlip then
+           if not BlipActif then
+		for _, PosBlips in pairs(PosLocation) do
+		  InfosBlips = AddBlipForCoord(PosBlips.x, PosBlips.y, PosBlips.z)
+      		  SetBlipSprite(InfosBlips, 280)
+      		  SetBlipDisplay(InfosBlips, 4)
+      		  SetBlipScale(InfosBlips, 0.8)
+      		  SetBlipColour(InfosBlips, 2)
+      		  SetBlipAsShortRange(InfosBlips, true)
+	  	  BeginTextCommandSetBlipName("STRING")
+      		  AddTextComponentString("kLocation")
+                  EndTextCommandSetBlipName(InfosBlips)
+                  BlipActif = true         
+                end
+           else
+           end
+         end
 	end
 end)
 
 Citizen.CreateThread(function()
-	while true do
+   while true do
         Citizen.Wait(0)
       if ActiverMarker then
-		for _, PositionLocation in pairs(PosLocation) do
-			DrawMarker(36, PositionLocation.x, PositionLocation.y, PositionLocation.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.75, 1.75, 1.75, 0, 204, 0, 100, false, true, 2, false, false, false, false)
+	for _, PositionLocation in pairs(PosLocation) do
+	       DrawMarker(36, PositionLocation.x, PositionLocation.y, PositionLocation.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, 1.75, 1.75, 1.75, 0, 204, 0, 100, false, true, 2, false, false, false, false)
         end
       end
-	end
+   end
 end)
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(0)		
+	Citizen.Wait(0)		
         local coords = GetEntityCoords(GetPlayerPed(-1))
         local PedinVehicle = IsPedSittingInAnyVehicle(PlayerPedId())
 		local JoueurDansLaZone = false
 		
-		for _, PositionPlayer in pairs(PosLocation) do
-			if(GetDistanceBetweenCoords(coords, PositionPlayer.x, PositionPlayer.y, PositionPlayer.z, true) < 1.30) then
-				JoueurDansLaZone = true
-			end
+	for _, PositionPlayer in pairs(PosLocation) do
+		if(GetDistanceBetweenCoords(coords, PositionPlayer.x, PositionPlayer.y, PositionPlayer.z, true) < 1.30) then
+		   JoueurDansLaZone = true
 		end
+	end
 				
-		if JoueurDansLaZone and not kLocVisible then
+	if JoueurDansLaZone and not kLocVisible then
             RageUI.Visible(RMenu:Get('kLocation', 'main'), true)
             kLocVisible = true
-		end
+	end
 		
-		if not JoueurDansLaZone then
+        if not JoueurDansLaZone then
             Citizen.Wait(150)
             RageUI.Visible(RMenu:Get('kLocation', 'main'), false)
             kLocVisible = false
