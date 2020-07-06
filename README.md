@@ -3,6 +3,8 @@ Car Rental in RageUI for FiveM.
 
 ✔️ Version v0.1 Release
 
+Crédit RageUI : https://github.com/iTexZoz/RageUI
+
 🔒 Dépendances:
 
     RageUI [Fourni]
