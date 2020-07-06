@@ -25,6 +25,8 @@ Crédit RageUI : https://github.com/iTexZoz/RageUI
 
     ---- AUTRES ----
     Merci de respecter mon travail et de ne pas vendre ni modifier le nom du script.
+    
+    Mon discord : KoZeuh#9070
 
 
 📷 Vidéo / Preview :
